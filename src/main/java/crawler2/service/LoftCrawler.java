@@ -6,13 +6,12 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 
 @Service
-public class LoftCrawler extends Crawler{
+public class LoftCrawler extends Crawler<Picture>{
 
     private PictureDao pictureDao;
     public LoftCrawler(PictureDao pictureDao){
@@ -20,10 +19,10 @@ public class LoftCrawler extends Crawler{
     }
 
     @Override
-    public ArrayList<Picture> getContext(String html, String pattern)  {
+    public ArrayList<Picture> getContext(String html)  {
         ArrayList<Picture> pictures = new ArrayList<>();
         Document document = Jsoup.parse(html);
-        Elements elements = document.select(pattern);
+        Elements elements = document.select("pattern");
         int i=1;
         for (Element element:elements) {
             String url1 = element.absUrl("src");
@@ -37,4 +36,5 @@ public class LoftCrawler extends Crawler{
         }
         return pictures;
     }
+
 }

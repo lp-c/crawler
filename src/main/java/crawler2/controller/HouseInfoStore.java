@@ -1,6 +1,5 @@
 package crawler2.controller;
 
-import crawler2.dao.HouseInfoReposity;
 import crawler2.service.HouseCrawler;
 import crawler2.service.MutilThreadHouseCrawler;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,8 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 @RestController
 public class HouseInfoStore {

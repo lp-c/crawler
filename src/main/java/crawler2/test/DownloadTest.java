@@ -1,4 +1,4 @@
-package crawler2.service;
+package crawler2.test;
 
 import crawler2.entity.HouseInfo;
 import org.jsoup.Jsoup;
