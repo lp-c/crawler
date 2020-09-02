@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>一叶知秋</title>
+</head>
+<body>
+<form method="post" th:action="@{/submit}" th:object="${pattern}">
+    <table>
+        <tr>
+            <td>请输入需要爬取的网站:</td>
+            <td><input type="text" th:field="*{url}"/></td>
+        </tr>
+        <tr>
+            <td>请输入CSS选择器:</td>
+            <td><input type="text" th:field="*{pattern}"></td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="提交"/>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

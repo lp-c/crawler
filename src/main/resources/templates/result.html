@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <!--非常重要，不加这句无法加载网路图片-->
+    <meta name="referrer" content="no-referrer">
+    <title>爬取结果</title>
+</head>
+<body>
+<div th:each="picture:${context}">
+    <div>
+        <p th:text="${picture.id}"></p>
+        <img th:src="@{${picture.url}}" alt="正在努力加载">
+    </div>
+</div>
+</body>
+</html>
