@@ -50,10 +50,4 @@ public class HouseInfoStore {
         //Thread.sleep(10000);
         return "hello";
     }
-
-    @GetMapping("/infotest")
-    public String infoTest(){
-        mutilThreadHouseCrawler.run(1);
-        return "hello lp";
-    }
 }
